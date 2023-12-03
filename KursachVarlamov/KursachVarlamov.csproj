@@ -21,6 +21,11 @@
     <None Update="Fonts\PixelTimesBold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="numbers.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+	
+
 
 </Project>

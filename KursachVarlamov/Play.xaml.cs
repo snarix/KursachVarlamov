@@ -26,7 +26,9 @@ namespace KursachVarlamov
 
         private void DoPlay(object sender, RoutedEventArgs e)
         {
-
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
 
         private void Settings(object sender, RoutedEventArgs e)

@@ -31,22 +31,15 @@
             </Border>
         </ControlTemplate>
 
-        <FontFamily x:Key="CustomFontFamily">
-            /KursachVarlamov;component/Fonts/#Pixel Times
-        </FontFamily>
         <Style x:Key="CustomButtonStyle" 
                TargetType="Button">
-            <Setter Property="FontFamily" 
-            Value="{StaticResource CustomFontFamily}" />
             <Setter Property="FontSize"
                     Value="16" />
         </Style>
     </Window.Resources>
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\artva\Desktop/numbers.jpg"/>
-        </Grid.Background>
+        <Image Source="/numbers.jpg"/>
         <StackPanel>
             <Label Height="70" 
                    Width="200"/>
@@ -59,6 +52,7 @@
                     Content="Играть"
                     Style="{StaticResource CustomButtonStyle}" 
                     Click="DoPlay"/>
+                    
             <Button Margin="5"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"

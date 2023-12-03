@@ -6,9 +6,54 @@
         xmlns:local="clr-namespace:KursachVarlamov"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450" 
-        Width="800">
+        Height="500" 
+        Width="600">
     <Grid>
-       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Width="180"
+                 Height="70"
+                 x:Name="NumberTextBlock"/>
+
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Width="180"
+                 Height="70"
+                 x:Name="InputTextBox"
+                 PreviewTextInput="InputTextBox_PreviewTextInput"
+                 PreviewKeyDown="InputTextBox_PreviewKeyDown"
+                 IsEnabled="False"/>
+
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Width="180"
+                Height="70"
+                Content="Начать"
+                Click="Start"
+                x:Name="StartButton"/>
+
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Width="180"
+                 Height="70"
+                 x:Name="ResultsTextBlock"
+                 IsEnabled="False"/>
+
+
+
+
     </Grid>
 </Window>
