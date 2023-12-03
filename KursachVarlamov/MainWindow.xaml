@@ -10,9 +10,9 @@
         Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.5*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -24,13 +24,13 @@
 
         <TextBox Grid.Row="1"
                  Grid.Column="1"
-                 Width="180"
+                 Width="250"
                  Height="70"
                  x:Name="NumberTextBlock"/>
 
         <TextBox Grid.Row="2"
                  Grid.Column="1"
-                 Width="180"
+                 Width="250"
                  Height="70"
                  x:Name="InputTextBox"
                  PreviewTextInput="InputTextBox_PreviewTextInput"
@@ -39,7 +39,7 @@
 
         <Button Grid.Row="0"
                 Grid.Column="1"
-                Width="180"
+                Width="250"
                 Height="70"
                 Content="Начать"
                 Click="Start"
@@ -47,7 +47,7 @@
 
         <TextBox Grid.Row="3"
                  Grid.Column="1"
-                 Width="180"
+                 Width="250"
                  Height="70"
                  x:Name="ResultsTextBlock"
                  IsEnabled="False"/>

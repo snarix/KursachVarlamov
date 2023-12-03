@@ -51,22 +51,19 @@ namespace KursachVarlamov
             InputTextBox.Focus();
 
             var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Interval = TimeSpan.FromSeconds(10); 
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            while (currentIndex < numbersToShow.Count)
-            {
-                await Task.Delay(100);
-            }
+            await Task.Delay(numbersToShow.Count * 1000 + 1000); 
 
             timer.Stop();
             InputTextBox.IsEnabled = false;
-            StartButton.IsEnabled = true;
 
             DisplayResults();
-            incorrectNumbers.Clear();
-            
+
+            StartButton.IsEnabled = true;
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -86,7 +83,7 @@ namespace KursachVarlamov
             if (incorrectNumbers.Any())
             {
                 string incorrectNumbersString = string.Join(", ", incorrectNumbers);
-                resultMessage += $"\nВведены неправильно: {incorrectNumbersString}";
+                resultMessage += $"\nВведены неправильно числа: {incorrectNumbersString}";
             }
 
             ResultsTextBlock.Text = resultMessage;
@@ -151,7 +148,6 @@ namespace KursachVarlamov
                     InputTextBox.IsEnabled = false;
                     StartButton.IsEnabled = true;
                     DisplayResults();
-                    incorrectNumbers.Clear();
                 }
             }
         }
