@@ -5,9 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KursachVarlamov"
         mc:Ignorable="d"
-        Title="MainWindow"
         Height="500" 
-        Width="600">
+        Width="600" 
+        Icon="/123.jpg">
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtonTemplate" 
+                     TargetType="Button">
+            <Border BorderBrush="Black" 
+                BorderThickness="0" 
+                CornerRadius="30"
+                TextBlock.Foreground="White">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="3,0" EndPoint="0,0">
+                        <GradientStop Color="#2a333d" Offset="1" />
+                        <GradientStop Color="#475462" Offset="0.75" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RecognizesAccessKey="True">
+                </ContentPresenter>
+            </Border>
+        </ControlTemplate>
+
+        <Style x:Key="CustomButtonStyle" 
+           TargetType="Button">
+            <Setter Property="FontSize"
+                Value="16" />
+        </Style>
+
+        <Style x:Key="CustomLabelStyle" 
+               TargetType="Label">
+            <Setter Property="FontSize"
+                    Value="14"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
@@ -26,7 +59,17 @@
                  Grid.Column="1"
                  Width="250"
                  Height="70"
-                 x:Name="NumberTextBlock"/>
+                 x:Name="NumberTextBlock"
+                 IsReadOnly="True"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius"
+                            Value="30"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
         <TextBox Grid.Row="2"
                  Grid.Column="1"
@@ -35,7 +78,16 @@
                  x:Name="InputTextBox"
                  PreviewTextInput="InputTextBox_PreviewTextInput"
                  PreviewKeyDown="InputTextBox_PreviewKeyDown"
-                 IsEnabled="False"/>
+                 IsEnabled="False"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius"
+                            Value="30"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
         <Button Grid.Row="0"
                 Grid.Column="1"
@@ -43,17 +95,43 @@
                 Height="70"
                 Content="Начать"
                 Click="Start"
-                x:Name="StartButton"/>
+                x:Name="StartButton"
+                Template="{StaticResource ButtonTemplate}"
+                Style="{StaticResource CustomButtonStyle}" />
 
         <TextBox Grid.Row="3"
                  Grid.Column="1"
                  Width="250"
                  Height="70"
                  x:Name="ResultsTextBlock"
-                 IsEnabled="False"/>
+                 IsEnabled="False"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius"
+                            Value="30"/>
+                    </Style>
+                </TextBox.Resources>
+        </TextBox>
+        
+        <Label Grid.Row="1"
+               Content="Запоминайте числа - "
+               Style="{StaticResource CustomLabelStyle}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
 
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Content="Вводите числа - "
+               Style="{StaticResource CustomLabelStyle}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
 
-
-
+        <Label Grid.Row="3"
+               Content="Результат - "
+               Style="{StaticResource CustomLabelStyle}"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
     </Grid>
 </Window>

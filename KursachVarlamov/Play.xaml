@@ -9,7 +9,8 @@
         Height="400"
         Width="400"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Icon="/123.jpg">
 
     <Window.Resources>
         <ControlTemplate x:Key="ButtonTemplate" 
@@ -39,9 +40,10 @@
     </Window.Resources>
 
     <Grid>
-        <Image Source="/numbers.jpg"/>
+        <Image Source="\numbers.jpg"
+               Margin="-10"/>
         <StackPanel>
-            <Label Height="70" 
+            <Label Height="90" 
                    Width="200"/>
             <Button Margin="5"
                     VerticalAlignment="Center"
@@ -52,23 +54,13 @@
                     Content="Играть"
                     Style="{StaticResource CustomButtonStyle}" 
                     Click="DoPlay"/>
-                    
             <Button Margin="5"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Height="50" 
                     Width="200"
                     Template="{StaticResource ButtonTemplate}"
-                    Content="Настройки"
-                    Style="{StaticResource CustomButtonStyle}" 
-                    Click="Settings"/>
-            <Button Margin="5"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Height="50" 
-                    Width="200"
-                    Template="{StaticResource ButtonTemplate}"
-                    Content="О игре"
+                    Content="Об игре"
                     Style="{StaticResource CustomButtonStyle}" 
                     Click="AboutGame"/>
             <Button Margin="5"
@@ -80,7 +72,7 @@
                     Content="Выход"
                     Style="{StaticResource CustomButtonStyle}" 
                     Click="Exit"/>
-            <Label Height="70" 
+            <Label Height="90" 
                    Width="200"/>
         </StackPanel>
     </Grid>

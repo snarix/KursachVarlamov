@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KursachVarlamov"
         mc:Ignorable="d"
-        Title="AboutPlay" 
         Height="800" 
         Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" 
+        Icon="/123.jpg">
     <Grid>
 
         <StackPanel HorizontalAlignment="Center"
